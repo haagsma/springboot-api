@@ -1,9 +1,8 @@
-package com.springlearn.conf;
+package com.springlearn.boot.conf;
 
-import com.springlearn.filters.JWTAuthenticationFilter;
-import com.springlearn.filters.JwtLoginFilter;
+import com.springlearn.boot.filters.JWTAuthenticationFilter;
+import com.springlearn.boot.filters.JwtLoginFilter;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpRequest;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

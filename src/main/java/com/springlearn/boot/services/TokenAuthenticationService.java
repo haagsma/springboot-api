@@ -1,4 +1,4 @@
-package com.springlearn.services;
+package com.springlearn.boot.services;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
@@ -9,7 +9,6 @@ import org.springframework.security.core.Authentication;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.Service;
 import java.util.Collections;
 import java.util.Date;
 

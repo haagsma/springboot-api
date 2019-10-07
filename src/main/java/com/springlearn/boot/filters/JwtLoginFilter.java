@@ -1,8 +1,8 @@
-package com.springlearn.filters;
+package com.springlearn.boot.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springlearn.model.AccountCredentials;
-import com.springlearn.services.TokenAuthenticationService;
+import com.springlearn.boot.dto.AccountCredentialsDTO;
+import com.springlearn.boot.services.TokenAuthenticationService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -25,15 +25,15 @@ public class JwtLoginFilter extends AbstractAuthenticationProcessingFilter {
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException {
 
-        AccountCredentials accountCredentials = new ObjectMapper()
-                .readValue(request.getInputStream(), AccountCredentials.class);
+        AccountCredentialsDTO accountCredentialsDTO = new ObjectMapper()
+                .readValue(request.getInputStream(), AccountCredentialsDTO.class);
 
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        accountCredentials.getUsername(),
-                        accountCredentials.getPassword(),
+                        accountCredentialsDTO.getUsername(),
+                        accountCredentialsDTO.getPassword(),
                         Collections.emptyList()
                 )
         );

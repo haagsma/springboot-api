@@ -1,6 +1,6 @@
-package com.springlearn.filters;
+package com.springlearn.boot.filters;
 
-import com.springlearn.services.TokenAuthenticationService;
+import com.springlearn.boot.services.TokenAuthenticationService;
 import org.apache.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,4 +1,4 @@
-package com.springlearn.runtime;
+package com.springlearn.boot;
 
 import org.apache.log4j.BasicConfigurator;
 import org.springframework.boot.SpringApplication;

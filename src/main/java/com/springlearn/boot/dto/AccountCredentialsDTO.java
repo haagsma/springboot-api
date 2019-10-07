@@ -1,9 +1,9 @@
-package com.springlearn.model;
+package com.springlearn.boot.dto;
 
 import lombok.Data;
 
 @Data
-public class AccountCredentials {
+public class AccountCredentialsDTO {
 
     private String username;
     private String password;
