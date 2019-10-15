@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,9 +34,15 @@ public class UsuarioController {
         return usuarioRepository.findAll();
     }
 
-    @PutMapping("/add")
+    @PutMapping("/")
     public ResponseEntity<?> add(@RequestBody Usuario usuario){
         usuarioService.create(usuario);
         return new ResponseEntity(HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
+        usuarioService.delete(id);
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
