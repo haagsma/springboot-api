@@ -33,6 +33,11 @@ public class UsuarioController {
         return usuarioRepository.findAll();
     }
 
+    @GetMapping("/findByNome/{nome}")
+    public ResponseEntity<?> getUsuarioByNome(@PathVariable String nome) {
+        return new ResponseEntity<>(usuarioRepository.findByNomeIgnoreCaseContaining(nome), HttpStatus.OK);
+    }
+
     @PutMapping("/add")
     public ResponseEntity<?> add(@RequestBody Usuario usuario){
         usuarioService.create(usuario);

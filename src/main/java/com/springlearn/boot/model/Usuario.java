@@ -28,23 +28,11 @@ public class Usuario implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column
     private String nome;
-
-    @Column
     private String email;
-
-    @Column
     private String senha;
-
-    @Column
     private String cpf;
-
-    @Column
     private String cnh;
-
-    @Column
     private String imagem;
 
     @ManyToOne(fetch = FetchType.LAZY)
