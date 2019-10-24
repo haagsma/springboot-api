@@ -30,14 +30,10 @@ public class EscoltaHist implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente")
     private Usuario cliente;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "origin")
-    private EscoltaHistType origin;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "destiny")
-    private EscoltaHistType destiny;
+    private String origin;
+    private String originType;
+    private String destiny;
+    private String destinyType;
     private Date dateFrom;
     private Date dateTo;
 
